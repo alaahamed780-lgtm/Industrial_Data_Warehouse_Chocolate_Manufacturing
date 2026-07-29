@@ -1,0 +1,58 @@
+USE Chocolate_Manufacturing_DW;
+GO
+
+CREATE TABLE master.Equipment_Master
+(
+    Equipment_ID                NVARCHAR(20)    NOT NULL,
+    Asset_Tag                   NVARCHAR(20)    NOT NULL,
+    Equipment_Name              NVARCHAR(200)   NOT NULL,
+    Equipment_Type              NVARCHAR(100)   NOT NULL,
+    Category                    NVARCHAR(100)   NOT NULL,
+    Subcategory                 NVARCHAR(100)   NOT NULL,
+    Plant                       NVARCHAR(50)    NOT NULL,
+    Building                    NVARCHAR(100)   NOT NULL,
+    Area                        NVARCHAR(100)   NOT NULL,
+    Production_Line             NVARCHAR(50)    NOT NULL,
+    Functional_Location         NVARCHAR(50)    NOT NULL,
+    Parent_Equipment            NVARCHAR(20)    NULL,
+    Assembly_Code               NVARCHAR(30)    NOT NULL,
+    Manufacturer                NVARCHAR(100)   NOT NULL,
+    Model                       NVARCHAR(50)    NOT NULL,
+    Serial_Number               NVARCHAR(50)    NOT NULL,
+    Country                     NVARCHAR(50)    NOT NULL,
+    PLC_Brand                   NVARCHAR(50)    NULL,
+    PLC_CPU                     NVARCHAR(50)    NULL,
+    DCS_System                  NVARCHAR(100)   NULL,
+    HMI                         NVARCHAR(100)   NULL,
+    Power_kW                    SMALLINT        NULL,
+    Voltage_V                   SMALLINT        NULL,
+    Frequency_Hz                TINYINT         NULL,
+    Installation_Year           SMALLINT        NULL,
+    Commissioning_Date          DATE            NULL,
+    Purchase_Cost_USD           DECIMAL(18,2)   NULL,
+    Replacement_Cost_USD        DECIMAL(18,2)   NULL,
+    Criticality                 NVARCHAR(20)    NOT NULL,
+    Risk_Class                  NVARCHAR(10)    NOT NULL,
+    Status                      NVARCHAR(20)    NOT NULL,
+    PM_Frequency_Days           SMALLINT        NULL,
+    Calibration_Required        NVARCHAR(3)     NULL,
+    Lubrication_Type            NVARCHAR(100)   NULL,
+    Lubrication_Frequency_Days  SMALLINT        NULL,
+    MTBF_Hours                  INT             NULL,
+    MTTR_Hours                  DECIMAL(6,2)    NULL,
+    Warranty_Years              TINYINT         NULL,
+    Expected_Life_Years         TINYINT         NULL,
+    Safety_Level                NVARCHAR(20)    NULL,
+    Energy_Source               NVARCHAR(50)    NULL,
+    Operating_Shift             CHAR(1)         NULL,
+    Maintenance_Team            NVARCHAR(30)    NULL,
+    Vendor_Code                 NVARCHAR(20)    NULL,
+    Spare_Parts_Class           CHAR(1)         NULL,
+    Cost_Center                 NVARCHAR(20)    NULL,
+    GPS_Area_Code               NVARCHAR(20)    NULL,
+    Notes                       NVARCHAR(MAX)   NULL,
+
+    CONSTRAINT PK_Equipment_Master
+        PRIMARY KEY CLUSTERED (Equipment_ID)
+);
+GO
